@@ -1,6 +1,12 @@
 <p><%= link_to 'Voltar', courses_path %></p>
 
-<%= form_with model: @course do |f| %>
+<% @course.errors.any? do %>
+  <% @course.errors.full_messages.each do |message|%>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<%= form_with model: @course, local: true do |f| %>
 
   <p>
     <%= f.label :name, 'Nome' %>
@@ -19,12 +25,12 @@
 
   <p>
     <%= f.label :price, 'Preço' %>
-    <%= f.text_field :price %>
+    <%= f.number_field :price %>
   </p>
 
   <p>
     <%= f.label :enrollment_deadline, 'Data limite de matrícula' %>
-    <%= f.text_field :enrollment_deadline %>
+    <%= f.date_field :enrollment_deadline %>
   </p>
 
   <p><%= f.submit 'Criar curso' %></p>
