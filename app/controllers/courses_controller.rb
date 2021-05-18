@@ -30,6 +30,13 @@ class CoursesController < ApplicationController
     render :edit
   end
 
+  def destroy 
+    @course = Course.find(params[:id])
+    return redirect_to courses_path if @course.destroy!
+
+    render courses_path
+  end
+
   private
 
   def course_params

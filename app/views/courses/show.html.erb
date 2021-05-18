@@ -23,3 +23,7 @@
 <p>
   <%= link_to 'Editar curso', edit_course_path(@course) %>
 </p>
+
+<p>
+  <%= link_to 'Apagar curso', course_path(@course), method: :delete %>
+</p>
