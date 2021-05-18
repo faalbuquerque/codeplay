@@ -10,13 +10,24 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    return redirect_to course_path(@course) if @course.save
+    return redirect_to @course if @course.save
 
     render :new
   end
 
   def show
     @course = Course.find(params[:id])
+  end
+
+  def edit
+    @course = Course.find(params[:id])
+  end
+
+  def update
+    @course = Course.find(params[:id])
+    return redirect_to @course if @course.update(course_params)
+
+    render :edit
   end
 
   private

@@ -18,4 +18,9 @@
   <p>
     <%= number_to_currency course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
   </p>
+
+  <p>
+    <%= link_to 'Editar curso', edit_course_path(course) %>
+  </p>
+  <hr>
 <% end %>
