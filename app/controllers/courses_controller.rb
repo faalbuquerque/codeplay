@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :set_course, only: %i[show edit update destroy]
 
   def index
     @courses = Course.all
@@ -16,25 +17,21 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find_by(id: params[:id])
     msg = 'Oops, curso não disponivel!'
 
     redirect_to courses_path, notice: msg unless @course
   end
 
   def edit
-    @course = Course.find(params[:id])
   end
 
   def update
-    @course = Course.find(params[:id])
     return redirect_to @course if @course.update(course_params)
 
     render :edit
   end
 
   def destroy
-    @course = Course.find_by(id: params[:id])
     msg = 'Curso apagado com sucesso!'
     return redirect_to courses_path, notice: msg if @course and @course.delete
 
@@ -46,5 +43,9 @@ class CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(:name, :description, :code, :price,
                                    :enrollment_deadline)
+  end
+
+  def set_course
+    @course = Course.find_by(id: params[:id])
   end
 end
