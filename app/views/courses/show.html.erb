@@ -28,5 +28,8 @@
   <p>
     <%= link_to 'Apagar curso', course_path(@course), method: :delete %>
   </p>
-
+<% else %>
+  <p>
+    Oops, curso não disponivel!
+  </p>
 <% end %>

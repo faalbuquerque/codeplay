@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
   end
 
   def new
+    @submit_text = 'Criar curso'
     @course = Course.new
   end
 
@@ -17,12 +18,10 @@ class CoursesController < ApplicationController
   end
 
   def show
-    msg = 'Oops, curso não disponivel!'
-
-    redirect_to courses_path, notice: msg unless @course
   end
 
   def edit
+    @submit_text = 'Atualizar curso'
   end
 
   def update

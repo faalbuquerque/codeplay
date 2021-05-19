@@ -1,0 +1,29 @@
+<%= form_with model: course, local: true do |f| %>
+
+  <p>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description, 'Descrição' %>
+    <%= f.text_area :description, size: "30x1" %>
+  </p>
+
+  <p>
+    <%= f.label :code, 'Código' %>
+    <%= f.text_field :code %>
+  </p>
+
+  <p>
+    <%= f.label :price, 'Preço' %>
+    <%= f.number_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :enrollment_deadline, 'Data limite de matrícula' %>
+    <%= f.date_field :enrollment_deadline %>
+  </p>
+
+  <p><%= f.submit submit_text %></p>
+<% end %>

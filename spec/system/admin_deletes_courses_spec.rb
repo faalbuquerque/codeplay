@@ -31,7 +31,6 @@ describe 'Admin deletes courses' do
 
     visit course_path(js)
 
-    expect(current_path).to eq(courses_path)
     expect(page).to have_content('Oops, curso não disponivel')
   end
 
