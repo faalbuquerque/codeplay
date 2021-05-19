@@ -1,29 +1,29 @@
 <%= form_with model: course, local: true do |f| %>
 
   <p>
-    <%= f.label :name, 'Nome' %>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
 
   <p>
-    <%= f.label :description, 'Descrição' %>
+    <%= f.label :description %>
     <%= f.text_area :description, size: "30x1" %>
   </p>
 
   <p>
-    <%= f.label :code, 'Código' %>
+    <%= f.label :code %>
     <%= f.text_field :code %>
   </p>
 
   <p>
-    <%= f.label :price, 'Preço' %>
+    <%= f.label :price %>
     <%= f.number_field :price %>
   </p>
 
   <p>
-    <%= f.label :enrollment_deadline, 'Data limite de matrícula' %>
+    <%= f.label :enrollment_deadline %>
     <%= f.date_field :enrollment_deadline %>
   </p>
 
-  <p><%= f.submit submit_text %></p>
+  <p><%= f.submit %></p>
 <% end %>

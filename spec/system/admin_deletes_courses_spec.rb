@@ -11,7 +11,7 @@ describe 'Admin deletes courses' do
                         enrollment_deadline: '01/02/2050')
 
     visit course_path(js)
-    click_on 'Apagar curso'
+    click_on 'Apagar Curso'
 
     expect(current_path).to eq(courses_path)
     expect(page).to have_content('Curso apagado com sucesso!')
@@ -41,7 +41,7 @@ describe 'Admin deletes courses' do
 
     visit course_path(js)
     js.destroy
-    click_on 'Apagar curso'
+    click_on 'Apagar Curso'
 
     expect(current_path).to eq(courses_path)
     expect(page).to have_content('Oops, curso não disponivel')

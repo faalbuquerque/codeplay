@@ -1,4 +1,4 @@
-<p><%= link_to 'Voltar', courses_path %></p>
+<p><%= link_to t('back'), courses_path %></p>
 
 <% if @course %>
   <h2>
@@ -14,19 +14,19 @@
   </p>
 
   <p>
-    <%= number_to_currency @course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
+    <%= number_to_currency @course.price %>
   </p>
 
   <p>
-    <%= @course.enrollment_deadline.strftime('%d/%m/%Y') %>
+    <%= I18n.localize(@course.enrollment_deadline) %>
   </p>
 
   <p>
-    <%= link_to 'Editar curso', edit_course_path(@course) %> | 
-    <%= link_to 'Apagar curso', course_path(@course), method: :delete %>
+    <%= link_to t('.edit_course'), edit_course_path(@course) %> | 
+    <%= link_to t('.del_course'), course_path(@course), method: :delete %>
   </p>
 <% else %>
   <p>
-    Oops, curso não disponivel!
+    <%= t('course_not_available') %>
   </p>
 <% end %>

@@ -1,9 +1,9 @@
-<p><%= link_to 'Voltar', root_path %></p>
+<p><%= link_to t('back'), root_path %></p>
 
-<p><%= link_to 'Registrar um Curso', new_course_path %></p>
+<p><%= link_to t('.title'), new_course_path %></p>
 
 <% if @courses.empty? %>
-  <%= 'Nenhum curso disponível!' %>
+  <%= t('courses_not_available') %>
 <% end %>
 
 <div class="container_list">
@@ -18,14 +18,12 @@
       </p>
 
       <p>
-        <%= number_to_currency course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
+        <%= number_to_currency course.price %>
       </p>
 
       <p>
-        <%= link_to 'Editar curso', edit_course_path(course) %> | 
-        <%= link_to 'Apagar curso', course_path(course),
-                                    method: :delete,
-                                    data: {confirm: "Tem certeza?"} %>
+        <%= link_to t('.edit_course'), edit_course_path(course) %> | 
+        <%= link_to t('.del_course'), course_path(course), method: :delete %>
       </p>
     </div>
   <% end %>

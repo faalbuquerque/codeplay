@@ -1,5 +1,5 @@
-<p><%= link_to 'Voltar', courses_path %></p>
+<p><%= link_to t('back'), courses_path %></p>
 
 <%= render 'shared/errors', object: @course %>
 
-<%= render 'form', submit_text: @submit_text, course: @course %>
+<%= render 'form', course: @course %>

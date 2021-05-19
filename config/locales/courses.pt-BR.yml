@@ -1,0 +1,34 @@
+pt-BR:
+  back: 'Voltar'
+  course_not_available: 'Oops, curso não disponivel!'
+  courses_not_available: 'Nenhum curso disponível!'
+
+  courses:
+    index:
+      title: 'Registrar um Curso'
+      edit_course: 'Editar Curso'
+      del_course: 'Apagar Curso'
+    show:
+      edit_course: 'Editar curso'
+      del_course: 'Apagar Curso'
+    create:
+      success: 'Curso criado com sucesso!'
+    update:
+      success: 'Curso atualizado com sucesso!'
+    destroy:
+      success: 'Curso apagado com sucesso!'
+
+  home:
+    index:
+      title: 'Boas vindas ao sistema de gestao de cursos e aulas'
+
+  activerecord:
+    models:
+      course: 'Curso'
+    attributes:
+      course:
+        name: 'Nome'
+        description: 'Descrição'
+        price: 'Preço'
+        code: 'Código'
+        enrollment_deadline: 'Data limite de matrícula'
