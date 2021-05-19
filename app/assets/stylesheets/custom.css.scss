@@ -26,9 +26,11 @@ a:hover {
 }
 .container_list {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  width: 100%;
   align-items: center;
   margin: 0 10%;
+  margin-bottom: 50px;
   flex-wrap: wrap;
 }
 .item {
@@ -36,11 +38,12 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 1 0 31%;
+  flex: 1 0 21%;
   background-color: var(--item_background);
   border-radius: 10px;
   margin: 5px;
   padding: 6px 16px;
+  min-width: 140px;
 }
 header {
   background-color: var(--codeplay_header);

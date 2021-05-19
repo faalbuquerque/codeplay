@@ -29,4 +29,23 @@
       </p>
     </div>
   <% end %>
+
+  <% if @courses.count % 4 != 0 %>
+    <% (1..(4 - @courses.count % 4)).each do |empty_block| %>
+      <div class="item">
+        <h2>
+          ---
+        </h2>
+        <p>
+          Por vir...
+        </p>
+        <p>
+          <%= number_to_currency 0, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
+        </p>
+        <p>
+          ---
+        </p>
+      </div>
+    <% end %>
+  <% end %>
 </div>
