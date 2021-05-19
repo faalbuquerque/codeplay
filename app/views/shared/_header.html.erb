@@ -1,9 +1,15 @@
-<%= link_to root_path do %>
-  <h1>Codeplay</h1>
-<% end %>
+<header>
+  <div class="container">
+    <%= link_to root_path, class: 'title_link' do %>
+      <h1>Codeplay</h1>
+    <% end %>
 
-<nav>
-  <%= link_to 'Cursos', courses_path %>
-</nav>
+    <nav>
+      <span class="nav_item">
+        <%= link_to 'Cursos', courses_path %>
+      </span class="nav_item">
+    </nav>
+  </div>
 
-<hr>
+  <hr>
+</header>

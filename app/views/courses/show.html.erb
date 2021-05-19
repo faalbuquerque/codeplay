@@ -1,9 +1,9 @@
 <p><%= link_to 'Voltar', courses_path %></p>
 
 <% if @course %>
-  <h1>
+  <h2>
     <%= @course.name %>
-  </h1>
+  </h2>
 
   <p>
     <%= @course.description %>
@@ -22,10 +22,7 @@
   </p>
 
   <p>
-    <%= link_to 'Editar curso', edit_course_path(@course) %>
-  </p>
-
-  <p>
+    <%= link_to 'Editar curso', edit_course_path(@course) %> | 
     <%= link_to 'Apagar curso', course_path(@course), method: :delete %>
   </p>
 <% else %>

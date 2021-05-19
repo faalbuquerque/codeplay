@@ -12,7 +12,8 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    return redirect_to @course if @course.save
+    msg = 'Curso criado com sucesso!'
+    return redirect_to @course, notice: msg if @course.save
 
     render :new
   end
@@ -25,7 +26,8 @@ class CoursesController < ApplicationController
   end
 
   def update
-    return redirect_to @course if @course.update(course_params)
+    msg = 'Curso atualizado com sucesso!'
+    return redirect_to @course, notice: msg if @course.update(course_params)
 
     render :edit
   end
@@ -34,7 +36,7 @@ class CoursesController < ApplicationController
     msg = 'Curso apagado com sucesso!'
     return redirect_to courses_path, notice: msg if @course and @course.delete
 
-    redirect_to courses_path, notice: 'Oops, curso não disponivel!'
+    redirect_to courses_path, alert: 'Oops, curso não disponivel!'
   end
 
   private

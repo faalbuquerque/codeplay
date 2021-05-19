@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--codeplay_body);
+}
+a {
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--codeplay_active_link);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10%;
+}
+.container_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+  flex-wrap: wrap;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 31%;
+  background-color: var(--item_background);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 6px 16px;
+}
+header {
+  background-color: var(--codeplay_header);
+}
+.title_link h1{
+  color: var(--codeplay_title) !important;
+  text-shadow: 0 3px 3px black;
+}
+.title_link{
+  text-decoration: none !important;
+}
+input {
+  color: black !important;
+}
+textarea {
+  color: black !important;
+}
+.custom_message {
+  background-color: var(--codeplay_message_background);
+  color: var(--codeplay_message_text);
+  padding: 2px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.custom_message p{
+  color: black;
+}
+.custom_alert{
+  background-color: var(--codeplay_alert_background);
+  color: var(--codeplay_alert_text);
+}
+.custom_alert p{
+  color: var(--codeplay_alert_text);
+  text-shadow: 0 3px 3px black;
+}
+.custom_notice {
+  background-color: var(--codeplay_notice_background);
+  color: var(--codeplay_notice_text);
+}
+.custom_notice p{
+  color: var(--codeplay_notice_text);
+  text-shadow: 0 3px 3px black;
+}
+.nav_item a{
+  font-size: 1.3em;
+  text-decoration: none;
+  font-weight: 600;
+}

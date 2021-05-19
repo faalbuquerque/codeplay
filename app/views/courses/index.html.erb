@@ -6,25 +6,27 @@
   <%= 'Nenhum curso disponível!' %>
 <% end %>
 
-<% @courses.each do |course|%>
-  <h1>
-    <%= link_to course.name, course %>
-  </h1>
+<div class="container_list">
+  <% @courses.each do |course|%>
+    <div class="item">
+      <h2>
+        <%= link_to course.name, course %>
+      </h2>
 
-  <p>
-    <%= course.description %>
-  </p>
+      <p>
+        <%= course.description %>
+      </p>
 
-  <p>
-    <%= number_to_currency course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
-  </p>
+      <p>
+        <%= number_to_currency course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
+      </p>
 
-  <p>
-    <%= link_to 'Editar curso', edit_course_path(course) %>
-  </p>
-
-  <p>
-    <%= link_to 'Apagar curso', course_path(course), method: :delete %>
-  </p>
-  <hr>
-<% end %>
+      <p>
+        <%= link_to 'Editar curso', edit_course_path(course) %> | 
+        <%= link_to 'Apagar curso', course_path(course),
+                                    method: :delete,
+                                    data: {confirm: "Tem certeza?"} %>
+      </p>
+    </div>
+  <% end %>
+</div>
