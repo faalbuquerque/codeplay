@@ -1,29 +1,32 @@
 <p><%= link_to 'Voltar', courses_path %></p>
 
-<h1>
-  <%= @course.name %>
-</h1>
+<% if @course %>
+  <h1>
+    <%= @course.name %>
+  </h1>
 
-<p>
-  <%= @course.description %>
-</p>
+  <p>
+    <%= @course.description %>
+  </p>
 
-<p>
-  <%= @course.code %>
-</p>
+  <p>
+    <%= @course.code %>
+  </p>
 
-<p>
-  <%= number_to_currency @course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
-</p>
+  <p>
+    <%= number_to_currency @course.price, unit: 'R$', separator: ',', delimiter: '.', format: '%u %n' %>
+  </p>
 
-<p>
-  <%= @course.enrollment_deadline.strftime('%d/%m/%Y') %>
-</p>
+  <p>
+    <%= @course.enrollment_deadline.strftime('%d/%m/%Y') %>
+  </p>
 
-<p>
-  <%= link_to 'Editar curso', edit_course_path(@course) %>
-</p>
+  <p>
+    <%= link_to 'Editar curso', edit_course_path(@course) %>
+  </p>
 
-<p>
-  <%= link_to 'Apagar curso', course_path(@course), method: :delete %>
-</p>
+  <p>
+    <%= link_to 'Apagar curso', course_path(@course), method: :delete %>
+  </p>
+
+<% end %>

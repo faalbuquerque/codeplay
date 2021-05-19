@@ -16,7 +16,10 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
+    @course = Course.find_by(id: params[:id])
+    msg = 'Oops, curso não disponivel!'
+
+    redirect_to courses_path, notice: msg unless @course
   end
 
   def edit
@@ -30,16 +33,18 @@ class CoursesController < ApplicationController
     render :edit
   end
 
-  def destroy 
-    @course = Course.find(params[:id])
-    return redirect_to courses_path if @course.destroy!
+  def destroy
+    @course = Course.find_by(id: params[:id])
+    msg = 'Curso apagado com sucesso!'
+    return redirect_to courses_path, notice: msg if @course and @course.delete
 
-    render courses_path
+    redirect_to courses_path, notice: 'Oops, curso não disponivel!'
   end
 
   private
 
   def course_params
-    params.require(:course).permit(:name, :description, :code, :price, :enrollment_deadline)
+    params.require(:course).permit(:name, :description, :code, :price,
+                                   :enrollment_deadline)
   end
 end
