@@ -1,2 +1,16 @@
 pt-BR:
   no_registered_teacher: Nenhum professor cadastrado
+
+  teachers:
+    index:
+      title: 'Registrar um Professor'
+
+  activerecord:
+    models:
+      teacher: 'Professor'
+    attributes:
+      teacher:
+        name: 'Nome'
+        email: 'email'
+        bio: 'Descrição'
+        profile_picture: 'Foto de perfil'

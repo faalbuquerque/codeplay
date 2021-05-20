@@ -1,5 +1,7 @@
 <%= link_to t('back'), root_path %>
 
+<p><%= link_to t('.title'), new_teacher_path %></p>
+
 <% if @teachers.empty? %>
   <%= t('no_registered_teacher') %>
 <% end %>
@@ -13,9 +15,4 @@
   <p>
     <%= teacher.email %>
   </p>
-
-  <p>
-    <%= teacher.bio %>
-  </p>
-
 <% end %>
