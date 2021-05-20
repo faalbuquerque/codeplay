@@ -1,0 +1,21 @@
+<%= link_to t('back'), root_path %>
+
+<% if @teachers.empty? %>
+  <%= t('no_registered_teacher') %>
+<% end %>
+
+<% @teachers.each do |teacher| %>
+
+  <h2>
+    <%= link_to teacher.name, teacher %>
+  </h2>
+
+  <p>
+    <%= teacher.email %>
+  </p>
+
+  <p>
+    <%= teacher.bio %>
+  </p>
+
+<% end %>
