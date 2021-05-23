@@ -15,4 +15,8 @@
   <p>
     <%= teacher.email %>
   </p>
+
+  <p>
+    <%= link_to t('.edit_teacher'), edit_teacher_path(teacher) %>
+  </p>
 <% end %>

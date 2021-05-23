@@ -4,6 +4,11 @@ pt-BR:
   teachers:
     index:
       title: 'Registrar um Professor'
+      edit_teacher: 'Editar Professor'
+    create:
+      success: 'Professor criado com sucesso!'
+    update:
+      success: 'Professor atualizado com sucesso!'
 
   activerecord:
     models:
@@ -11,6 +16,6 @@ pt-BR:
     attributes:
       teacher:
         name: 'Nome'
-        email: 'email'
+        email: 'E-mail'
         bio: 'Descrição'
         profile_picture: 'Foto de perfil'

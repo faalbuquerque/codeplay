@@ -14,9 +14,22 @@ class TeachersController < ApplicationController
 
   def create
     @teacher = Teacher.new(teacher_params)
-    return redirect_to @teacher if @teacher.save
+    msg = t('.success')
+    return redirect_to @teacher, notice: msg if @teacher.save
 
     render :new
+  end
+
+  def edit
+    @teacher = Teacher.find_by(id: params[:id])
+  end
+
+  def update
+    @teacher = Teacher.find_by(id: params[:id])
+    msg = t('.success')
+    return redirect_to @teacher if @teacher.update(teacher_params)
+
+    render :edit
   end
 
   private

@@ -12,4 +12,6 @@
   <%= @teacher.bio %>
 </p>
 
-<%= image_tag(@teacher.profile_picture) %>
+<% if @teacher.profile_picture.attached? %>
+  <%= image_tag(@teacher.profile_picture) %>
+<% end %>
