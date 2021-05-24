@@ -25,5 +25,10 @@
     <%= f.date_field :enrollment_deadline %>
   </p>
 
+  <p>
+    <%= f.label :teacher_id, t('.teacher') %>
+    <%= f.collection_select :teacher_id, teachers, :id, :name %>
+  </p>
+
   <p><%= f.submit %></p>
 <% end %>

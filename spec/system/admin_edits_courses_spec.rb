@@ -2,9 +2,12 @@ require 'rails_helper'
 
 describe 'Admin edits courses' do
   it 'successfully' do
+    teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                              bio: 'Eu sou o professor Bob')
+
     course = Course.create!(name: 'Ruby', description: 'Um curso de Ruby',
                             code: 'RUBYBASIC', price: 10,
-                            enrollment_deadline: '22/12/2090')
+                            enrollment_deadline: '22/12/2090', teacher: teacher)
 
     visit courses_path
     click_on 'Editar Curso'
@@ -26,9 +29,12 @@ describe 'Admin edits courses' do
   end
 
   it 'and attributes cannot be blank' do
+    teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                              bio: 'Eu sou o professor Bob')
+
     course = Course.create!(name: 'Ruby', description: 'Um curso de Ruby',
                             code: 'RUBYBASIC', price: 10,
-                            enrollment_deadline: '22/12/2033')
+                            enrollment_deadline: '22/12/2033', teacher: teacher)
 
     visit edit_course_path(course)
     fill_in 'Nome', with: ''
@@ -40,13 +46,16 @@ describe 'Admin edits courses' do
   end
 
   it 'and code must be unique' do
+    teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                              bio: 'Eu sou o professor Bob')
+
     course = Course.create!(name: 'Ruby', description: 'Um curso de Ruby',
                             code: 'RUBYBASIC', price: 10,
-                            enrollment_deadline: '22/12/2033')
+                            enrollment_deadline: '22/12/2033', teacher: teacher)
 
     course_rails = Course.create!(name: 'Ruby', description: 'Um curso de Ruby',
                                   code: 'RAILSBASIC', price: 10,
-                                  enrollment_deadline: '22/12/2033')
+                                  enrollment_deadline: '22/12/2033', teacher: teacher)
 
     visit edit_course_path(course_rails)
     fill_in 'Código', with: 'RUBYBASIC'

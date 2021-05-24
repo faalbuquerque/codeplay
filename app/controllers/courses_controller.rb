@@ -2,10 +2,12 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
 
   def index
+    @teachers = Teacher.all
     @courses = Course.all
   end
 
   def new
+    @teachers = Teacher.all
     @course = Course.new
   end
 
@@ -14,6 +16,7 @@ class CoursesController < ApplicationController
     msg = t('.success')
     return redirect_to @course, notice: msg if @course.save
 
+    @teachers = Teacher.all
     render :new
   end
 
@@ -21,12 +24,14 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    @teachers = Teacher.all
   end
 
   def update
     msg = t('.success')
     return redirect_to @course, notice: msg if @course.update(course_params)
 
+    @teachers = Teacher.all
     render :edit
   end
 
@@ -41,7 +46,7 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:name, :description, :code, :price,
-                                   :enrollment_deadline)
+                                   :enrollment_deadline, :teacher_id)
   end
 
   def set_course

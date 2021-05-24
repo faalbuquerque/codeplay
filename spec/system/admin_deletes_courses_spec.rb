@@ -2,13 +2,16 @@ require 'rails_helper'
 
 describe 'Admin deletes courses' do
   it 'successfully' do
+    teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                              bio: 'Eu sou o professor Bob')
+
     Course.create!(name: 'Ruby', description: 'Um curso de Ruby',
                    code: 'RUBYBASIC', price: 10,
-                   enrollment_deadline: '22/12/2033')
+                   enrollment_deadline: '22/12/2033', teacher: teacher)
 
     js = Course.create!(name: 'JavaScript', description: 'Um curso de JavaScript',
                         code: 'JAVASCRIPT', price: 60,
-                        enrollment_deadline: '01/02/2050')
+                        enrollment_deadline: '01/02/2050', teacher: teacher)
 
     visit course_path(js)
     click_on 'Apagar Curso'
@@ -24,9 +27,12 @@ describe 'Admin deletes courses' do
   end
 
   it 'not exist' do
+    teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                              bio: 'Eu sou o professor Bob')
+
     js = Course.create!(name: 'JavaScript', description: 'Um curso de JavaScript',
                         code: 'JAVASCRIPT', price: 60,
-                        enrollment_deadline: '01/02/2050')
+                        enrollment_deadline: '01/02/2050', teacher: teacher)
     js.destroy!
 
     visit course_path(js)
@@ -35,9 +41,12 @@ describe 'Admin deletes courses' do
   end
 
   it 'already been deleted' do
+    teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                              bio: 'Eu sou o professor Bob')
+
     js = Course.create!(name: 'JavaScript', description: 'Um curso de JavaScript',
                         code: 'JAVASCRIPT', price: 60,
-                        enrollment_deadline: '01/02/2050')
+                        enrollment_deadline: '01/02/2050', teacher: teacher)
 
     visit course_path(js)
     js.destroy

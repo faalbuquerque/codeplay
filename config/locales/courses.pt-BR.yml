@@ -10,13 +10,15 @@ pt-BR:
     show:
       edit_course: 'Editar curso'
       del_course: 'Apagar Curso'
+      teacher: 'Professor'
     create:
       success: 'Curso criado com sucesso!'
     update:
       success: 'Curso atualizado com sucesso!'
     destroy:
       success: 'Curso apagado com sucesso!'
-
+    form:
+      teacher: 'Professor'
   home:
     index:
       title: 'Boas vindas ao sistema de gestao de cursos e aulas'
@@ -31,3 +33,5 @@ pt-BR:
         price: 'Preço'
         code: 'Código'
         enrollment_deadline: 'Data limite de matrícula'
+
+

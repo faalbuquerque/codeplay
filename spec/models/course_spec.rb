@@ -13,9 +13,12 @@ RSpec.describe Course, type: :model do
     end
 
     it 'code must be uniq' do
+      teacher = Teacher.create!(name: 'Bob', email: 'bob@email.com',
+                                bio: 'Eu sou o professor Bob')
+
       Course.create!(name: 'Ruby', description: 'Um curso de Ruby',
                     code: 'RUBYBASIC', price: 10,
-                    enrollment_deadline: '22/12/2033')
+                    enrollment_deadline: '22/12/2033', teacher: teacher)
       course = Course.new(code: 'RUBYBASIC')
 
       course.valid?
