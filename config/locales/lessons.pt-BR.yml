@@ -1,0 +1,24 @@
+pt-BR:
+  lessons_not_available: 'Sem aulas disponiveis!'
+  lesson_not_available: 'Oops, aula não disponivel!'
+
+  lessons:
+    duration:
+      one: '1 minuto'
+      other: '%{count} minutos'
+    create: 
+      success: 'Aula adicionada com sucesso!'
+    update:
+      success: 'Aula atualizada com sucesso!'
+    destroy:
+      success: 'Aula apagada com sucesso!'
+
+  activerecord:
+    models:
+      lesson: 'Aula'
+    attributes:
+      lesson:
+        name: 'Nome'
+        duration: 'Duração'
+        content: 'Conteúdo'
+

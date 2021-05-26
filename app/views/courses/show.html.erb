@@ -26,9 +26,36 @@
   </p>
 
   <p>
+    <%= link_to t('.add_lesson'), new_course_lesson_path(@course) %>
+  </p>
+
+  <% if @course.lessons.empty? %>
+    <%= t('lessons_not_available') %>
+  <% else %>
+    <div>
+      <% @course.lessons.each do |lesson| %>
+        <p>
+          <%= link_to lesson.name, course_lesson_path(@course) %>
+        </p>
+
+        <p>
+          <%= t('lessons.duration', count: lesson.duration)  %>
+        </p>
+
+        <p>
+          <%= link_to t('.edit_lesson'), edit_course_lesson_path(@course) %> |
+          <%= link_to t('.del_lesson'), course_lesson_path(@course), method: :delete %>
+        </p>
+
+      <% end %>
+    </div>
+  <% end%>
+
+  <p>
     <%= link_to t('.edit_course'), edit_course_path(@course) %> | 
     <%= link_to t('.del_course'), course_path(@course), method: :delete %>
   </p>
+
 <% else %>
   <p>
     <%= t('course_not_available') %>

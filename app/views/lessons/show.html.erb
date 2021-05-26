@@ -1,0 +1,15 @@
+<%= link_to t('back'), course_path %>
+
+<% @course.lessons.each do |lesson| %>
+  <p>
+    <%= lesson.name %>
+  </p>
+
+  <p>
+    <%= t('lessons.duration', count: lesson.duration)  %>
+  </p>
+
+  <p>
+    <%= lesson.content  %>
+  </p>
+<% end %>

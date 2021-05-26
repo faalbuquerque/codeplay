@@ -1,0 +1,5 @@
+<%= link_to t('back'), course_path(@course) %>
+
+<%= render 'shared/errors', object: @lesson %>
+
+<%= render 'form', course: @course, lesson: @lesson %>

@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
 
   def destroy
     msg = t('.success')
-    return redirect_to courses_path, notice: msg if @course and @course.delete
+    return redirect_to courses_path, notice: msg if @course and @course.destroy
 
     redirect_to courses_path, alert: t('course_not_available')
   end
