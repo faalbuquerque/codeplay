@@ -15,5 +15,22 @@
     </nav>
   </div>
 
+  <% if user_signed_in? %>
+    <p>
+      <%= current_user.email %>
+    </p>
+
+    <p>
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to t('register_me'), new_user_registration_path %>
+    </p>
+
+    <p>
+      <%= link_to t('log_into_account'), new_user_session_path %>
+    </p>
+  <% end %>
   <hr>
 </header>
