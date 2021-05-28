@@ -42,5 +42,4 @@ pt-BR:
         price: 'Preço'
         code: 'Código'
         enrollment_deadline: 'Data limite de matrícula'
-
-
+        teacher: 'Professor'
