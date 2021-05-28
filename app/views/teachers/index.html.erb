@@ -19,4 +19,8 @@
   <p>
     <%= link_to t('.edit_teacher'), edit_teacher_path(teacher) %>
   </p>
+
+  <p id='del-<%= teacher.id %>'>
+    <%= link_to t('.del_teacher'), teacher_path(teacher), method: :delete %>
+  </p>
 <% end %>

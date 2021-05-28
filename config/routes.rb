@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :lessons, only: %i[show new create edit update destroy]
   end
 
-  resources :teachers, only: %i[index show new create edit update]
+  resources :teachers
 
   get 'search', to: 'home#search'
 end

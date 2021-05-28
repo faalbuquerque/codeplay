@@ -27,9 +27,17 @@ class TeachersController < ApplicationController
   def update
     @teacher = Teacher.find_by(id: params[:id])
     msg = t('.success')
-    return redirect_to @teacher if @teacher.update(teacher_params)
+    return redirect_to @teacher, notice: msg if @teacher.update(teacher_params)
 
     render :edit
+  end
+
+  def destroy
+    @teacher = Teacher.find_by(id: params[:id])
+    msg = t('.success')
+    return redirect_to teachers_path, notice: msg if @teacher and @teacher.destroy
+
+    redirect_to teachers_path, alert: t('teacher_not_available')
   end
 
   private
