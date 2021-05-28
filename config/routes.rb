@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :teachers, only: %i[index show new create edit update]
+
+  get 'search', to: 'home#search'
 end

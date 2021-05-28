@@ -26,6 +26,11 @@ pt-BR:
   home:
     index:
       title: 'Boas vindas ao sistema de gestao de cursos e aulas'
+      search: 'Busca'
+      go: 'Pesquisar'
+    search:
+      result_search: 'Resultados da Busca'
+      details: 'Detalhes'
 
   activerecord:
     models:

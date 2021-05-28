@@ -1,0 +1,11 @@
+<h3><%= t('.result_search') %></h3>
+
+<% return 'Nenhum resultado encontrado!' if @courses.empty? %>
+
+<% @courses.each do |course| %>
+
+  <p><%= course.name %></p>
+  <p><%= number_to_currency course.price %></p>
+  <p><%= link_to t('.details'), course_path(course) %></p>
+
+<% end %>
