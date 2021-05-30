@@ -1,24 +1,51 @@
-# README
+# Codplay
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Plataforma de cursos para estudos como parte do treinamento da Campus Code(TreinaDev)
 
-Things you may want to cover:
+<br>
 
-* Ruby version
+## Tecnologias utilizadas:
 
-* System dependencies
+✴️ Ruby on Rails
 
-* Configuration
+✴️ RSPEC
 
-* Database creation
+✴️ Devise
 
-* Database initialization
+<br>
 
-* How to run the test suite
+## Executando o projeto:
 
-* Services (job queues, cache servers, search engines, etc.)
+No terminal, clone o projeto:
+```
+git clone https://github.com/faalbuquerque/codeplay.git
+```
 
-* Deployment instructions
+Entre na pasta do projeto:
+```
+cd codeplay
+```
 
-* ...
+Execute os comandos:
+```
+bundle install && yarn install && rails db:migrate
+```
+
+Rode o servidor do Projeto:
+```
+rails s
+```
+
+Visualize no navegador:
+```
+127.0.0.1:3000
+```
+<br>
+
+## Dados para testes:
+
+```
+rails db:seed
+
+*Informações de acesso serão impressas no terminal
+```
