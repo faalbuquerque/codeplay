@@ -1,15 +1,22 @@
 <%= link_to t('back'), course_path %>
 
-<% @course.lessons.each do |lesson| %>
-  <p>
-    <%= lesson.name %>
-  </p>
+<h2>Curso: <%= @course.name %></h2>
 
-  <p>
-    <%= t('lessons.duration', count: lesson.duration)  %>
-  </p>
+<p>
+  Aula: <%= @lesson.name %>
+</p>
 
+<p>
+  <%= t('lessons.duration', count: @lesson.duration)  %>
+</p>
+
+<p>
+  <%= @lesson.content  %>
+</p>
+
+<h3>Conteudo do curso</h3>
+<% @lesson.course.lessons.each do |lesson| %>
   <p>
-    <%= lesson.content  %>
+    <%= link_to lesson.name, course_lesson_path(@course, lesson) %>
   </p>
 <% end %>

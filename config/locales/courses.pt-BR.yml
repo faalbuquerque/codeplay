@@ -15,6 +15,7 @@ pt-BR:
       add_lesson: 'Adicionar aula'
       edit_lesson: 'Editar Aula'
       del_lesson: 'Apagar Aula'
+      purchase_course: 'Comprar curso'
     create:
       success: 'Curso criado com sucesso!'
     update:

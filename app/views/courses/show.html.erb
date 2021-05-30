@@ -6,6 +6,10 @@
   </h2>
 
   <p>
+    <%= link_to t('.purchase_course'), '#' %>
+  </p>
+
+  <p>
     <%= @course.description %>
   </p>
 
@@ -35,7 +39,7 @@
     <div>
       <% @course.lessons.each do |lesson| %>
         <p>
-          <%= link_to lesson.name, course_lesson_path(@course) %>
+          <%= link_to lesson.name, course_lesson_path(@course, lesson) %>
         </p>
 
         <p>
@@ -43,8 +47,8 @@
         </p>
 
         <p>
-          <%= link_to t('.edit_lesson'), edit_course_lesson_path(@course) %> |
-          <%= link_to t('.del_lesson'), course_lesson_path(@course), method: :delete %>
+          <%= link_to t('.edit_lesson'), edit_course_lesson_path(@course, lesson) %> |
+          <%= link_to t('.del_lesson'), course_lesson_path(@course, lesson), method: :delete %>
         </p>
 
       <% end %>
