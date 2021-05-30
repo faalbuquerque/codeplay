@@ -2,17 +2,15 @@
 
 Plataforma de cursos para estudos como parte do treinamento da Campus Code(TreinaDev)
 
-<br>
 
 ## Tecnologias utilizadas:
 
-✴️ Ruby on Rails
+➡️ Ruby on Rails
 
-✴️ RSPEC
+➡️ RSPEC
 
-✴️ Devise
+➡️ Devise
 
-<br>
 
 ## Executando o projeto:
 
@@ -40,7 +38,6 @@ Visualize no navegador:
 ```
 127.0.0.1:3000
 ```
-<br>
 
 ## Dados para testes:
 
