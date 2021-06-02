@@ -36,6 +36,9 @@ end
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
 
+  require './spec/support/courses_api_spec_helpers'
+  config.include CoursesApiSpecHelpers
+
   config.before(type: :system) do
     driven_by :rack_test
   end

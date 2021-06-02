@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   resources :teachers
 
   get 'search', to: 'home#search'
+
+  namespace :api do
+    namespace :v1 do
+      resources :courses, only: %i[index show create], param: :code
+    end
+  end
 end
