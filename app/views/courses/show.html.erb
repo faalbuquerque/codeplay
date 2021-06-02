@@ -5,9 +5,13 @@
     <%= @course.name %>
   </h2>
 
-  <p>
-    <%= link_to t('.purchase_course'), '#' %>
-  </p>
+  <% if user_signed_in? %>
+    <p>
+      <%= link_to t('.purchase_course'), '#' %>
+    </p>
+  <% else %>
+    <p>'Necessário estar logado para comprar curso!'</p>
+  <% end %>
 
   <p>
     <%= @course.description %>
