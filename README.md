@@ -49,7 +49,6 @@ rails db:seed
 <br>
 
 ## API de cursos:
----
 
 ### Para listar todos os Cursos utilize:
 ```
